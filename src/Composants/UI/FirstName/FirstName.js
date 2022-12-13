@@ -1,6 +1,6 @@
-
+import classes from "./FirstName.module.css"
 export default function FirstName() {
   return (
-    <div>Samy</div>
+    <div className={classes.text}>Samy</div>
   )
 }
