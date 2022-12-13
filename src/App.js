@@ -1,14 +1,15 @@
 import React from "react";
 import Header from "./Composants/Container/Header/Header";
-import Button from "./Composants/UI/Button/Button";
+import User from "./Composants/Container/User/User";
 function App() {
 
 	return (
 		<div>
 			<Header />
-      <Button color="black" title="Nous contacter" />
+      <User />
 		</div>
-	);
+  );
 }
 
 export default App;
+

@@ -7,6 +7,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    <App />
+   <App />
 );
 
+function MonComposantEstUneFonction(proprietes){
+  return(<p>je suis un composant {proprietes.leTexte}</p>)
+}
