@@ -1,17 +1,13 @@
 //Un composant / A Component
 
-export default function Button(properties) {
+export default function Button(props) {
 	return (
 		<button
 			style={{
-				backgroundColor: properties.color,
-				color: "white",
-				border: "none",
-				padding: "10px",
-				borderRadius: "5px",
+				backgroundColor: props.color,
 			}}
 		>
-			{properties.label}
+			{props.title}
 		</button>
 	);
 }
