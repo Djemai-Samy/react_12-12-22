@@ -1,6 +1,6 @@
 import classes from "./FirstName.module.css"
-export default function FirstName() {
+export default function FirstName({prenom}) {
   return (
-    <span className={classes.text}>Samy</span>
+    <span className={classes.text}>{prenom}</span>
   )
 }

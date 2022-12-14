@@ -1,16 +1,16 @@
 //Un composant / A Component
 
-export default function Button(props) {
+export default function Button({title, color}) {
 
   let  test = "test"
 
 	return (
 		<button
 			style={{
-				backgroundColor: props.color,
+				backgroundColor: color,
 			}}
 		>
-			{props.title}
+			{title}
 		</button>
 	);
 }

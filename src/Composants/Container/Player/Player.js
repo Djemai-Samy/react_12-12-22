@@ -1,10 +1,10 @@
 import Avatar from "../../UI/Avatar/Avatar";
-export default function Player() {
+export default function Player({user}) {
 	const jeu = 250;
 	const score = getRandomInt();
 
-	const nom = "Djemai";
-	const prenom = "Samy";
+	const nom = user.nom;
+	const prenom = user.prenom;
 	const age = 27;
 	const isPermis = false;
 
