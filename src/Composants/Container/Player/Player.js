@@ -1,33 +1,4 @@
-// export default function Player() {
-
-//   const score = 600;
-
-//   if(score > 500){
-
-//     return (
-//       <div>Gagnant: {score}</div>
-//     )
-//   }else{
-
-//     return (
-//       <div>Perdant: {score}</div>
-//     )
-//   }
-
-// }
-
-//Opérateur ternaire:
-// (condition) ? (expression executée si vrai) : (expression execiutée si faux)
-
-// export default function Player() {
-// 	const score = 600;
-// 	return (
-// 		<div style={{ color: score > 500 ? "green" : "red" }}>
-// 			{score > 500 ? "Gagnant" : "Perdant"}: {score}
-// 		</div>
-// 	);
-// }
-
+import Avatar from "../../UI/Avatar/Avatar";
 export default function Player() {
 	const jeu = 250;
 	const score = getRandomInt();
@@ -40,12 +11,18 @@ export default function Player() {
 	function getRandomInt() {
 		return Math.floor(Math.random() * 500);
 	}
-
 	return (
 		<>
-			<p>
-				Joueur: {nom} {prenom}
+    <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+      <div style={{width:"40px"}}>
+        <Avatar/>
+      </div>
+      
+      <p style={{color:"white", margin:"auto 15px"}}>
+				{nom} {prenom}
 			</p>
+    </div>
+			
 
 			<p>{age >= 18 ? "Majeur" : "Mineur"}</p>
 
