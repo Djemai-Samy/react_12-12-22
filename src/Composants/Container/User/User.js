@@ -7,12 +7,12 @@ export default function User({utilisateur}) {
 	return (
 		<div className={classes.container}>
 			<div className={classes.imageContainer}>
-				<Avatar />
+				<Avatar source={utilisateur.avatarURL} />
 			</div>
 
 			<div className={classes.infoContainer}>
 				<FullName lastName={utilisateur.nom} firstName={utilisateur.prenom} />
-				<Hobbies />
+				<Hobbies hobbies={utilisateur.hobbies} />
 			</div>
 		</div>
 	);

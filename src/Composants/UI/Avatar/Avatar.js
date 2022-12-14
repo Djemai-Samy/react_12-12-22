@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Avatar() {
+export default function Avatar({source}) {
 	return (
 		<img
 			style={{ borderRadius: "50%", border: "2px solid gray", width:"100%" }}
-			src="https://www.djemai-samy.com/Hero/Image_samy_djemai.svg"
+			src={source}
 			alt="Djemai Samy"
 		/>
 	);

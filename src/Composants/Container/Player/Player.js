@@ -15,7 +15,7 @@ export default function Player({user}) {
 		<>
     <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
       <div style={{width:"40px"}}>
-        <Avatar/>
+        <Avatar source={user.avatarURL}/>
       </div>
       
       <p style={{color:"white", margin:"auto 15px"}}>

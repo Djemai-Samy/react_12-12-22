@@ -6,9 +6,11 @@ import User from "./Composants/Container/User/User";
 function App() {
 
   let userFormDB = {
-    nom:"Djemai",
-    prenom:"Samy",
-    hobbies:["Programmation", "Graphisme"]
+    nom:"John",
+    prenom:"Die",
+    hobbies:["Programmation", "Graphisme", "Musique"],
+    avatarURL:"https://www.djemai-samy.com/Hero/Image_samy_djemai.svg",
+    age:27
   }
 
 	return (
