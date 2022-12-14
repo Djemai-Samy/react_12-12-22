@@ -29,18 +29,32 @@
 // }
 
 export default function Player() {
-	
-  const score = getRandomInt();
 	const jeu = 250;
-	
-  function getRandomInt() {
+	const score = getRandomInt();
+
+	const nom = "Djemai";
+	const prenom = "Samy";
+	const age = 27;
+	const isPermis = false;
+
+	function getRandomInt() {
 		return Math.floor(Math.random() * 500);
 	}
-  
-	return (
-		<p style={{ color: score > jeu ? "green" : "red" }}>
-			{score > jeu ? "Gagnant" : "Perdant"}: {score}
-		</p>
-	);
 
+	return (
+		<>
+			<p>
+				Joueur: {nom} {prenom}
+			</p>
+
+			<p>{age >= 18 ? "Majeur" : "Mineur"}</p>
+
+			<p>{isPermis && age >= 18 ? "Peut conduire" : "ne peut pas conduire"}</p>
+
+			<p style={{ color: score > jeu ? "green" : "red" }}>
+				{score > jeu ? "Gagnant" : "Perdant"}: {score}
+			</p>
+		</>
+	);
 }
+

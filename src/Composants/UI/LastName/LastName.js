@@ -2,6 +2,6 @@
 
 export default function LastName() {
   return (
-    <div>Djemai</div>
+    <span style={{margin:"auto 5px", fontSize:"1.2em"}}>Djemai</span>
   )
 }
