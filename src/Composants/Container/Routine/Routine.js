@@ -1,23 +1,52 @@
+import Button from "../../UI/Button/Button";
 
 export default function Routine() {
-  
-  function alertManger(){
-    alert("faut aller manger!")
-  }
+	//Créer une fonction qui prend en parametre 'laTache' une chaine de caractères
+	function afficheAlert(laTache) {
+		//Et alert la concatenation de 'faut aller (laTache)!'
+		alert(`Faut aller ${laTache}!`);
+	}
 
-  function alertDormir(){
-    alert("faut aller dormir!")
-  }
+	return (
+		<div>
+			<button
+				onClick={() => {
+					afficheAlert("manger");
+				}}
+			>
+				Manger
+			</button>
 
-  function alertEtudier(){
-    alert("faut aller étudier!")
-  }
-  
-  return (
-    <div>
-      <button onClick={alertManger}>Manger</button>
-      <button onClick={alertDormir}>Dormir</button>
-      <button onClick={alertEtudier}>Etudier</button>
-    </div>
-  )
+			<button
+				onClick={() => {
+					afficheAlert("dormir");
+				}}
+			>
+				Dormir
+			</button>
+
+			<button
+				onClick={() => {
+					afficheAlert("étudier");
+				}}
+			>
+				Etudier
+			</button>
+
+			<Button
+				title="Manger"
+				color="red"
+				fonction={() => {
+					afficheAlert("manger");
+				}}
+			/>
+			<Button
+				title="Dormir"
+				color="green"
+				fonction={() => {
+					afficheAlert("dormir");
+				}}
+			/>
+		</div>
+	);
 }

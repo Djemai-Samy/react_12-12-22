@@ -1,8 +1,10 @@
 import React from "react";
+import Counter from "./Composants/Container/Counter/Counter";
 import Header from "./Composants/Container/Header/Header";
 import Player from "./Composants/Container/Player/Player";
 import Routine from "./Composants/Container/Routine/Routine";
 import User from "./Composants/Container/User/User";
+
 
 function App() {
 
@@ -20,12 +22,12 @@ function App() {
 
 	return (
 		<div>
+      <Counter />
 			<Header />
 			<User utilisateur={userFromDB} />
 			<Player user={userFromDB} />
 
       <button onClick={ afficheAlert }>Valider</button>
-
       <Routine />
 		</div>
 	);

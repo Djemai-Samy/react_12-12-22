@@ -1,11 +1,10 @@
 //Un composant / A Component
 
-export default function Button({title, color}) {
-
-  let  test = "test"
+export default function Button({title, color, fonction}) {
 
 	return (
 		<button
+      onClick={fonction}
 			style={{
 				backgroundColor: color,
 			}}
