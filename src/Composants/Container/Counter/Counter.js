@@ -26,6 +26,7 @@ export default function Counter() {
     setDoubleCompteur(newCounter*2)
   }
 
+
 	return (
 		<div>
 			<p style={{ color: "white" }}>Counter: {compteur}</p>

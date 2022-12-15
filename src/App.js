@@ -4,31 +4,42 @@ import Header from "./Composants/Container/Header/Header";
 import Player from "./Composants/Container/Player/Player";
 import Routine from "./Composants/Container/Routine/Routine";
 import User from "./Composants/Container/User/User";
-
+import Menu from "./Composants/Container/Menu/Menu";
+import Button from "./Composants/UI/Button/Button";
 
 function App() {
-
-  let userFromDB = {
-    nom:"John",
-    prenom:"Doe",
-    hobbies:["Programmation", "Graphisme", "Musique"],
-    avatarURL:"https://www.djemai-samy.com/Hero/Image_samy_djemai.svg",
-    age:27
-  }
-
-  function afficheAlert(){
-    alert('Je suis cliqué!')
-  }
+	let userFromDB = {
+		nom: "John",
+		prenom: "Doe",
+		hobbies: ["Programmation", "Graphisme", "Musique"],
+		avatarURL: "https://www.djemai-samy.com/Hero/Image_samy_djemai.svg",
+		age: 27,
+	};
 
 	return (
 		<div>
-      <Counter />
+			<Counter />
 			<Header />
 			<User utilisateur={userFromDB} />
 			<Player user={userFromDB} />
+			<Routine />
+			
+      <Menu>
+				<div>
+					<h2>Menu secret</h2>
+					<ul>
+						<li>Programmation</li>
+						<li>graphisme</li>
+					</ul>
+				</div>
+			</Menu>
+      
+      <Menu>
+				<div id="test">
+					<h2>Un autre menu secret</h2>
+				</div>
+			</Menu>
 
-      <button onClick={ afficheAlert }>Valider</button>
-      <Routine />
 		</div>
 	);
 }

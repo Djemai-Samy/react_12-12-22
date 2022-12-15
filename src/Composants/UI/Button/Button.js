@@ -1,9 +1,10 @@
 //Un composant / A Component
 
-export default function Button({title, color, fonction}) {
+export default function Button({title, color, fonction, id}) {
 
 	return (
 		<button
+    id={id}
       onClick={fonction}
 			style={{
 				backgroundColor: color,
