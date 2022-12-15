@@ -6,6 +6,8 @@ import Routine from "./Composants/Container/Routine/Routine";
 import User from "./Composants/Container/User/User";
 import Menu from "./Composants/Container/Menu/Menu";
 import Button from "./Composants/UI/Button/Button";
+import FullName from "./Composants/Container/FullName/FullName";
+import FullNameForm from "./Composants/Forms/FullNameForm/FullNameForm";
 
 function App() {
 	let userFromDB = {
@@ -18,6 +20,7 @@ function App() {
 
 	return (
 		<div>
+      <FullNameForm />
 			<Counter />
 			<Header />
 			<User utilisateur={userFromDB} />

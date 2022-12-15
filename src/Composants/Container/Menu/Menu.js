@@ -9,7 +9,7 @@ export default function Menu(props) {
   function toggleShow(){
   
    setIsShow(!isShow);
-   //setIsShow(isShow ? false : trues)
+   //setIsShow(isShow ? false : true)
   }
   
   return (
