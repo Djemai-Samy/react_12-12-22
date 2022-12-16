@@ -8,6 +8,7 @@ import Menu from "./Composants/Container/Menu/Menu";
 import Button from "./Composants/UI/Button/Button";
 import FullName from "./Composants/Container/FullName/FullName";
 import FullNameForm from "./Composants/Forms/FullNameForm/FullNameForm";
+import LoginForm from "./Composants/Forms/LoginForm/LoginForm";
 
 function App() {
 	let userFromDB = {
@@ -21,6 +22,7 @@ function App() {
 	return (
 		<div>
       <FullNameForm />
+      <LoginForm/>
 			<Counter />
 			<Header />
 			<User utilisateur={userFromDB} />
