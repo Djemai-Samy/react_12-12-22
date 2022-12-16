@@ -1,20 +1,16 @@
-import React, { createContext } from "react";
-import Counter from "./Composants/Container/Counter/Counter";
-import Header from "./Composants/Container/Header/Header";
-import Player from "./Composants/Container/Player/Player";
-import Routine from "./Composants/Container/Routine/Routine";
-import User from "./Composants/Container/User/User";
-import Menu from "./Composants/Container/Menu/Menu";
-import Button from "./Composants/UI/Button/Button";
-import FullName from "./Composants/Container/FullName/FullName";
-import FullNameForm from "./Composants/Forms/FullNameForm/FullNameForm";
-import LoginForm from "./Composants/Forms/LoginForm/LoginForm";
+import React, { createContext, useState } from "react";
+import {BrowserRouter as Router, Route, Link, Routes, NavLink} from 'react-router-dom';
+import Home from "./Composants/Pages/Home";
+import Login from "./Composants/Pages/Login";
+import Profil from "./Composants/Pages/Profil";
 
 
 //1 Créer le contexte
 export const UtilisateurContext = createContext();
 
 function App() {
+
+
 	let userFromDB = {
 		nom: "John",
 		prenom: "Doe",
@@ -23,34 +19,24 @@ function App() {
 		age: 27,
 	};
 
-  //Utiliser le Provider et le remplir
+//Utiliser le Provider et le remplir
 	return (
-		<div> 
-			<UtilisateurContext.Provider value={userFromDB}>
-				<User/>
-				<Player  />
-				<FullNameForm />
-				<LoginForm />
-				<Counter />
-				<Header />
-
-				<Routine />
-
-				<Menu>
-					<div>
-						<h2>Menu secret</h2>
-						<ul>
-							<li>Programmation</li>
-							<li>graphisme</li>
-						</ul>
-					</div>
-				</Menu>
-
-				<Menu>
-					<div id="test">
-						<h2>Un autre menu secret</h2>
-					</div>
-				</Menu>
+		<div>
+      <UtilisateurContext.Provider value={userFromDB}>
+        <Router>
+          <nav>
+            <ul>
+              <li><NavLink to="/" >Acceuil</NavLink></li>
+              <li><NavLink to="/profil" >Profil</NavLink></li>
+              <li><NavLink to="/login" >Se connecter</NavLink></li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/profil" element={<Profil/>} />
+            <Route path="/login" element={<Login/>} />
+          </Routes>
+        </Router>     
 			</UtilisateurContext.Provider>
 		</div>
 	);
