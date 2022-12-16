@@ -43,3 +43,10 @@ function App() {
 }
 
 export default App;
+
+
+//Refaire un projet
+//Apprendre a faire des requetes
+//Styliser la navbar
+
+
