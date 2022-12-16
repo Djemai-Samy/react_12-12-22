@@ -5,20 +5,25 @@ import Button from '../../UI/Button/Button'
 
 export default function FullNameForm() {
 
-  const [nameInput, setNameInput] = useState("")
+  //Des variables pour stocker la saisie
+  const [nameInput, setNameInput] = useState("Samy")
   
-  function afficheNom(){
-    //Afficher une alerte avec le nom
-    alert(nameInput)
-  }
-
+  //les fonctions handle, gestionnaire d'événements de saisies
   function handleNameInput(e){
     setNameInput(e.target.value)
   }
-  
+
+  //Fonction pour valider le formulaire
+  function afficheNom(){
+    //Afficher une alerte avec le nom
+    alert(nameInput)
+    setNameInput('')
+  }
+
+  //les composants: les inputs, boutons...
   return (
     <div>
-      <input type={"text"} placeholder="Entrez un nom" onChange={handleNameInput}/>
+      <input value={nameInput} type={"text"} placeholder="Entrez un nom" onChange={handleNameInput}/>
       <Button title={"Valider"} color="green" fonction={afficheNom} />
     </div>
   )
