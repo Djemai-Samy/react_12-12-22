@@ -7,7 +7,7 @@ export default function LoginForm() {
 
 	function handleInput(e, nameInput) {
 		//nameInput: "email", "password", "name"
-    setUser({...user, nameInput: e.target.value})
+    setUser({...user, [nameInput]: e.target.value})
 	}
 
 	//3 La fonction pour valider le formulaire
