@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { UtilisateurContext } from "../../../App";
 import Avatar from "../../UI/Avatar/Avatar";
-export default function Player({user}) {
-	const jeu = 250;
+export default function Player() {
+	
+  const user = useContext(UtilisateurContext);
+  
+  const jeu = 250;
 	const score = getRandomInt();
 
 	const nom = user.nom;

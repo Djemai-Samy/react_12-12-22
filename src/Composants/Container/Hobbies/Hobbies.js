@@ -1,7 +1,12 @@
-export default function Hobbies(props) {
+import { useContext } from "react";
+import { UtilisateurContext } from "../../../App";
+
+export default function Hobbies() {
+
+  const {hobbies} = useContext(UtilisateurContext)
 	return (
 		<ul>
-			{props.hobbies.map((elemnt, position) => {
+			{hobbies.map((elemnt, position) => {
 				return <li key={position}>{elemnt}</li>;
 			})}
 		</ul>

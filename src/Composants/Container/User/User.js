@@ -3,16 +3,16 @@ import FullName from "../FullName/FullName";
 import Hobbies from "../Hobbies/Hobbies";
 import classes from "./User.module.css";
 
-export default function User({utilisateur}) {
+export default function User() {
 	return (
 		<div className={classes.container}>
 			<div className={classes.imageContainer}>
-				<Avatar source={utilisateur.avatarURL} />
+				<Avatar/>
 			</div>
 
 			<div className={classes.infoContainer}>
-				<FullName lastName={utilisateur.nom} firstName={utilisateur.prenom} />
-				<Hobbies hobbies={utilisateur.hobbies} />
+				<FullName />
+				<Hobbies />
 			</div>
 		</div>
 	);

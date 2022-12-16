@@ -2,25 +2,24 @@ import React, { useState } from "react";
 import Button from "../../UI/Button/Button";
 
 export default function LoginForm() {
-	//1 Créer les variables d'états
-	let [user, setUser] = useState({ name: "", email: "", password: "" });
+
+let [user, setUser] = useState({ name: "", email: "", password: "" });
 
 	function handleInput(e, nameInput) {
 		//nameInput: "email", "password", "name"
-    setUser({...user, [nameInput]: e.target.value})
+    setUser({...user, [nameInput] : e.target.value})
 	}
 
 	//3 La fonction pour valider le formulaire
-	function login() {
+	function login(e) {
+    e.preventDefault();
 		//Envoyer les donnée a la back end, apres verification des entrées
 		alert(`Email: ${user.email}. Username: ${user.name}`);
 	}
 
-  console.log(user);
-
 	//Lier les composant avec lesvariables et les fonction
 	return (
-		<div>
+		<form onSubmit={login}>
 			<input
 				type={"text"}
 				placeholder="Entrez votre nom"
@@ -39,8 +38,8 @@ export default function LoginForm() {
 				value={user.password}
 				onChange={(event)=>{ handleInput(event, "password") }}
 			/>
-			<Button title="Login" color="black" fonction={login} />
-		</div>
+			<button type="submit">Valider</button>
+		</form>
 	);
 }
 

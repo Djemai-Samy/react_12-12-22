@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import Counter from "./Composants/Container/Counter/Counter";
 import Header from "./Composants/Container/Header/Header";
 import Player from "./Composants/Container/Player/Player";
@@ -10,6 +10,10 @@ import FullName from "./Composants/Container/FullName/FullName";
 import FullNameForm from "./Composants/Forms/FullNameForm/FullNameForm";
 import LoginForm from "./Composants/Forms/LoginForm/LoginForm";
 
+
+//1 Créer le contexte
+export const UtilisateurContext = createContext();
+
 function App() {
 	let userFromDB = {
 		nom: "John",
@@ -19,32 +23,35 @@ function App() {
 		age: 27,
 	};
 
+  //Utiliser le Provider et le remplir
 	return (
-		<div>
-      <FullNameForm />
-      <LoginForm/>
-			<Counter />
-			<Header />
-			<User utilisateur={userFromDB} />
-			<Player user={userFromDB} />
-			<Routine />
-			
-      <Menu>
-				<div>
-					<h2>Menu secret</h2>
-					<ul>
-						<li>Programmation</li>
-						<li>graphisme</li>
-					</ul>
-				</div>
-			</Menu>
-      
-      <Menu>
-				<div id="test">
-					<h2>Un autre menu secret</h2>
-				</div>
-			</Menu>
+		<div> 
+			<UtilisateurContext.Provider value={userFromDB}>
+				<User/>
+				<Player  />
+				<FullNameForm />
+				<LoginForm />
+				<Counter />
+				<Header />
 
+				<Routine />
+
+				<Menu>
+					<div>
+						<h2>Menu secret</h2>
+						<ul>
+							<li>Programmation</li>
+							<li>graphisme</li>
+						</ul>
+					</div>
+				</Menu>
+
+				<Menu>
+					<div id="test">
+						<h2>Un autre menu secret</h2>
+					</div>
+				</Menu>
+			</UtilisateurContext.Provider>
 		</div>
 	);
 }
